@@ -9,3 +9,4 @@ This application was made to practice development with the Spring Framework, usi
 - JdbcTemplate
 - Apache Tomcat
 - Spring Validation
+- Thymeleaf
