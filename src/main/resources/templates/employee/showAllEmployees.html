@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Pather Name</th>
+    <th>Last Name</th>
+    <th>Position</th>
+    <th>Salary</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="employee : ${employees}">
+    <td>
+      <a th:href="@{/employees/{id}(id=${employee.getId()})}" th:text="${employee.getId()}">Employee ID</a>
+    </td>
+    <td th:text="${employee.getFirstName()}">First Name</td>
+    <td th:text="${employee.getPatherName()}">Pather Name</td>
+    <td th:text="${employee.getLastName()}">Last Name</td>
+    <td th:text="${employee.getPosition()}">Position</td>
+    <td th:text="${employee.getSalary()}">Salary</td>
+  </tr>
+  </tbody>
+</table>
+<form th:method="GET" th:action="@{/employees/new}" style="display: inline;">
+  <input type="submit" value="New employee">
+</form>
+<br>
+<form th:method="GET" th:action="@{/departments}" style="display: inline;">
+  <input type="submit" value="Departments">
+</form>
+<form th:method="GET" th:action="@{/de}" style="display: inline;">
+  <input type="submit" value="Departments Employees">
+</form>
+<form th:method="GET" th:action="@{/projects}" style="display: inline;">
+  <input type="submit" value="Projects">
+</form>
+<br>
+<form th:method="GET" th:action="@{/tasks/1}" style="display: inline;">
+  <input type="submit" value="Task1">
+</form>
+<form th:method="GET" th:action="@{/tasks/2}" style="display: inline;">
+  <input type="submit" value="Task2">
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New book</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/employees/{id}(id=${employee.getId()})}" th:object="${employee}">
+  <label> Insert first name: </label>
+  <input type="text" th:field="*{firstName}"/>
+  <br/>
+  <label> Insert last name: </label>
+  <input type="text" th:field="*{lastName}"/>
+  <br/>
+  <label> Insert pather name: </label>
+  <input type="text" th:field="*{patherName}"/>
+  <br/>
+  <label> Insert position: </label>
+  <input type="text" th:field="*{position}"/>
+  <br/>
+  <label> Insert salary: </label>
+  <input type="text" th:field="*{salary}"/>
+  <br/>
+  <input type="submit" value="Edit!"/>
+</form>
+
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Cost</th>
+    <th>Department ID</th>
+    <th>Date begin</th>
+    <th>Date end</th>
+    <th>Date end real</th>
+  </tr>
+  </thead>
+  <tbody>
+    <td th:text="${project.getId()}">Id</td>
+    <td th:text="${project.getName()}">name</td>
+    <td th:text="${project.getCost()}">cost</td>
+    <td th:text="${project.getDepartment()}">dep id</td>
+    <td th:text="${project.getDateBeg()}">date beg</td>
+    <td th:text="${project.getDateEnd()}">date end</td>
+    <td th:text="${project.getDateEndReal()}">date end real</td>
+  </tbody>
+</table>
+<form th:method="GET" th:action="@{/projects/{id}/edit(id=${project.getId()})}" style="display: inline;">
+  <input type="submit" value="Edit project">
+</form>
+<form th:method="GET" th:action="@{/projects/{id}/delete(id=${project.getId()})}" style="display: inline;">
+  <input type="submit" value="Delete project">
+</form>
+<br/>
+<form th:method="GET" th:action="@{/projects}" style="display: inline;">
+  <input type="submit" value="Projects">
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New book</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/projects/new}" th:object="${project}">
+  <label> Insert name: </label>
+  <input type="text" th:field="*{name}"/>
+  <br/>
+  <label> Insert cost: </label>
+  <input type="text" th:field="*{cost}"/>
+  <br/>
+  <label> Insert department id: </label>
+  <input type="text" th:field="*{department}"/>
+  <br/>
+  <label> Insert date begin: </label>
+  <input type="text" th:field="*{dateBeg}"/>
+  <div style="color:red" th:if="${#fields.hasErrors('dateBeg')}" th:errors="*{dateBeg}">Email Error</div>
+  <br/>
+  <label> Insert date end: </label>
+  <input type="text" th:field="*{dateEnd}"/>
+  <div style="color:red" th:if="${#fields.hasErrors('dateEnd')}" th:errors="*{dateEnd}">Email Error</div>
+  <br/>
+  <label> Insert date end real: </label>
+  <input type="text" th:field="*{dateEndReal}"/>
+  <br/>
+  <input type="submit" value="New!"/>
+</form>
+
+</body>
+</html>
+

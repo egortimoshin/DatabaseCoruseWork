@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>First name</th>
+    <th>Pather name</th>
+    <th>Last name</th>
+    <th>Position</th>
+    <th>Salary</th>
+  </tr>
+  </thead>
+  <tbody>
+    <td th:text="${employee.getId()}">Employee ID</td>
+    <td th:text="${employee.getFirstName()}">Employee First Name</td>
+    <td th:text="${employee.getPatherName()}">Employee Pather Name</td>
+    <td th:text="${employee.getLastName()}">Employee Last Name</td>
+    <td th:text="${employee.getSalary()}">Employee Salary</td>
+    <td th:text="${employee.getPosition()}">Employee Position</td>
+  </tbody>
+</table>
+<form th:method="GET" th:action="@{/employees/{id}/edit(id=${employee.getId()})}" style="display: inline;">
+  <input type="submit" value="Edit employee">
+</form>
+<form th:method="GET" th:action="@{/employees/{id}/delete(id=${employee.getId()})}" style="display: inline;">
+  <input type="submit" value="Delete employee">
+</form>
+<br/>
+<form th:method="GET" th:action="@{/employees}" style="display: inline;">
+  <input type="submit" value="Employees">
+</form>
+</body>
+</html>
