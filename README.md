@@ -1,4 +1,4 @@
-Course project for databases subject7.
+Course project for databases subject.
 This application was made to practice development with the Spring Framework, using:
 
 - Spring Boot
